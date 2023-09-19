@@ -1,6 +1,8 @@
 public class Project {
     public static void main(String[] args) {
-        isPalindrome(128);
+        isPalindrome(121);
+        isPerfect(6);
+        numberToWord(12);
     }
 
 
@@ -15,10 +17,39 @@ public class Project {
 
  }
 if (originalNumber==reversedNum){
-    System.out.println(originalNumber+ " is Palindrome");
+    System.out.println(originalNumber+"is Palindrome");
 }
 else {
-    System.out.println(originalNumber + " is not Palindrome");
+    System.out.println(originalNumber + "is not Palindrome");
 }
     }
+
+    public static void isPerfect(int number) {
+         if(number<0) {
+             System.out.println(false);
+         }
+        int sum= 0;
+         for (int i=1; i< number; i++)
+         {
+             if(number % i == 0)
+                 sum =sum+1;
+         }
+
+         if (sum==number)
+             System.out.println(true);
+         else
+             System.out.println(false);
+
+
+
+   }
+public static void numberToWord(int number){
+        String newNum=String.valueOf(number);
+        String[] array = newNum.split(" -");
+       String x =array[0];
+
+
+    System.out.println(x);
+
+}
 }
