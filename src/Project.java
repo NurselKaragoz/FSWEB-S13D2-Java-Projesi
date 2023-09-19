@@ -1,8 +1,8 @@
 public class Project {
     public static void main(String[] args) {
         isPalindrome(121);
-        isPerfect(6);
-        numberToWord(12);
+        System.out.println(isPerfect(28));
+        System.out.println(numberToWord(21));
     }
 
 
@@ -17,39 +17,73 @@ public class Project {
 
  }
 if (originalNumber==reversedNum){
-    System.out.println(originalNumber+"is Palindrome");
+    System.out.println(true);
 }
 else {
-    System.out.println(originalNumber + "is not Palindrome");
+    System.out.println(false);
 }
     }
 
-    public static void isPerfect(int number) {
+    public static boolean isPerfect(int number) {
          if(number<0) {
-             System.out.println(false);
+             return false;
          }
         int sum= 0;
-         for (int i=1; i< number; i++)
+         for (int i=1; i<= number/2; i++)
          {
              if(number % i == 0)
-                 sum =sum+1;
+               sum +=i;
          }
 
-         if (sum==number)
-             System.out.println(true);
-         else
-             System.out.println(false);
+        return sum == number;
 
 
 
    }
-public static void numberToWord(int number){
-        String newNum=String.valueOf(number);
-        String[] array = newNum.split(" -");
-       String x =array[0];
+        public static String numberToWord(int number){
+        char[] newNum=String.valueOf(number).toCharArray();
+        String numberToText= "";
+        for (char digits: newNum){
+            switch (digits){
+                case '0':
+                    numberToText+="Zero ";
+                    break;
+                case '1':
+                    numberToText+="One ";
+                    break;
+                case '2':
+                    numberToText+="Two ";
+                    break;
+                case '3':
+                    numberToText+="Tree ";
+                    break;
+                case '4':
+                    numberToText+="Four ";
+                    break;
+                case '5':
+                    numberToText+="Five ";
+                    break;
+                case '6':
+                    numberToText+="Six ";
+                    break;
+                case '7':
+                    numberToText+="Seven ";
+                    break;
+                case '8':
+                    numberToText+="Eight ";
+                    break;
+                case '9':
+                    numberToText+="Nine ";
+                    break;
+
+            }
 
 
-    System.out.println(x);
+            }
+            return numberToText.trim();
+        }
+
+
 
 }
-}
+
